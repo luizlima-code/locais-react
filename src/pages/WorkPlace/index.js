@@ -1,11 +1,16 @@
 import React from "react";
+import ContentComponent from "../../components/ContentComponent";
+import NavLeftComponent from "../../components/NavLeftComponent";
+import NavTopComponent from "../../components/NavTopComponent";
 
 import { Container } from "./styles";
 
 function WorkPlacePage() {
   return (
     <Container>
-      <h1>Hello World</h1>
+      <NavLeftComponent />
+      <NavTopComponent />
+      <ContentComponent />
     </Container>
   );
 }
