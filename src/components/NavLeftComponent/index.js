@@ -17,7 +17,7 @@ function NavLeftComponent() {
         <ButtonMenu>
           <p>Áreas</p>
         </ButtonMenu>
-        <ButtonMenu className="meupai">
+        <ButtonMenu className="menuselected">
           <p>Locais de Trabalho</p>
         </ButtonMenu>
         <ButtonMenu>

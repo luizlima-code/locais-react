@@ -28,7 +28,7 @@ export const DivMenu = styled.div`
   width: 100%;
   gap: 12px;
 
-  .meupai {
+  .menuselected {
     border-left: 8px solid var(--white) !important;
   }
 `;
