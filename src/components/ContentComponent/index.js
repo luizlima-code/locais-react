@@ -8,15 +8,35 @@ import { Container, DivContent, DivTitle, DivForm, Table } from "./styles";
 const SELECT_VALUE_KEY = "arrLocaisTrabalho";
 
 function ContentComponent() {
-  const [isId, setIsId] = useState(1);
+  const [isId, setIsId] = useState(5);
   const [building, setBuilding] = useState("");
   const [workplace, setWorkplace] = useState("");
   const [editInfo, setEditInfo] = useState(true);
   const [info, setInfo] = useState([
     {
-      id: isId,
+      id: isId - 4,
+      building: "Prédio 1",
+      workplace: "Local de Trabalho 1",
+    },
+    {
+      id: isId - 3,
       building: "Prédio 2",
-      workplace: "Lagoas",
+      workplace: "Local de Trabalho 2",
+    },
+    {
+      id: isId - 2,
+      building: "Prédio 3",
+      workplace: "Local de Trabalho 3",
+    },
+    {
+      id: isId - 1,
+      building: "Prédio 4",
+      workplace: "Local de Trabalho 4",
+    },
+    {
+      id: isId,
+      building: "Prédio 5",
+      workplace: "Local de Trabalho 5",
     },
   ]);
   sessionStorage.setItem(SELECT_VALUE_KEY, JSON.stringify(info));
@@ -32,22 +52,6 @@ function ContentComponent() {
   function editRow() {
     setEditInfo(false);
     console.log(editInfo);
-    var building1 = document.querySelector(".building-class");
-    var workplace1 = document.querySelector(".workplace-class");
-
-    var building = building1.innerText;
-    var workplace = workplace1.innerText;
-
-    building1.innerHTML =
-      "<input type='text' id='building" + isId + "' value='" + building + "'/>";
-    workplace1.innerHTML =
-      "<input type='text' id='workplace" +
-      isId +
-      "' value='" +
-      workplace +
-      "'/>";
-
-    console.log(building, workplace);
   }
 
   function deleteRow(infos) {
@@ -124,7 +128,7 @@ function ContentComponent() {
           </thead>
           <tbody>
             {info?.map((infos) => (
-              <tr>
+              <tr key={infos.id}>
                 <td className="building-class">{infos.building}</td>
                 <td className="workplace-class">{infos.workplace}</td>
                 <td>
